@@ -1,6 +1,16 @@
-version: "3.9"  # optional since v1.27.0
 services:
-  web:
-    build: .
-    ports:
-      - "80:80"
+    ubuntu:
+        public: true
+        container_name: tzchz
+        image: aank999/xrdp-okteto-cloud:latest
+        ports:
+            - 80:80
+        volumes: 
+            - /root/Desktop
+            - /home
+        resources:
+          cpu: 2000m
+          memory: 6000Mi
+          storage:
+            size: 2Gi
+            class: ssd
